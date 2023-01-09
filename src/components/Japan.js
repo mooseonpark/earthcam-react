@@ -1,7 +1,7 @@
 import React from 'react';
 // import Mycomponent from './Mycomponent';
 // import ReactPlayer from 'react-player';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import {
 	GoogleMap,
 	useLoadScript,
