@@ -30,6 +30,31 @@ const Video = styled.video`
 
 const Countries = styled.div`
 	display: flex;
+	position: absolute;
+	z-index: 99999;
+	img {
+		width: 65px;
+		opacity: 0.6;
+	}
+	img:hover {
+		transition: linear 0.6s;
+		transform: scale(1.5);
+		opacity: 1;
+	}
+`;
+
+const Writing = styled.h1`
+	color: transparent;
+	white-space: nowrap;
+	&:hover {
+		content: 'Hello real live world!';
+		position: absolute;
+		top: 24rem;
+		color: #fff;
+		overflow: hidden;
+		border-right: 2px solid #fff;
+		animation: typing 7s steps(31) infinite;
+	}
 `;
 
 const Main = () => {
@@ -54,6 +79,7 @@ const Main = () => {
 					<img src={finland} alt="finland" />
 				</Link>
 			</Countries>
+			<Writing>ee</Writing>
 		</Container>
 	);
 };
