@@ -1,18 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes, withTheme } from 'styled-components';
 import { Link } from 'react-router-dom';
 import videoBg from '../assets/video.mp4';
-import japan from '../assets/japan.png';
-import thailand from '../assets/thailand.png';
-import usa from '../assets/usa.png';
-import taiwan from '../assets/taiwan.png';
-import finland from '../assets/finland.png';
+// import japan from '../assets/japan.png';
+// import thailand from '../assets/thailand.png';
+// import usa from '../assets/usa.png';
+// import taiwan from '../assets/taiwan.png';
+// import finland from '../assets/finland.png';
 
 const Container = styled.div`
 	width: 100vw;
 	height: 100vh;
 `;
 
+// background video
 const Overlay = styled.div`
 	position: absolute;
 	top: 0;
@@ -28,41 +29,81 @@ const Video = styled.video`
 	object-fit: cover;
 `;
 
-const Countries = styled.div`
-	display: flex;
-	position: absolute;
-	z-index: 99999;
-	img {
-		width: 65px;
-		opacity: 0.6;
+// const Countries = styled.div`
+// 	display: flex;
+// 	position: absolute;
+// 	z-index: 99999;
+// 	img {
+// 		width: 65px;
+// 		opacity: 0.6;
+// 	}
+// 	img:hover {
+// 		transition: linear 0.6s;
+// 		transform: scale(1.5);
+// 		opacity: 1;
+// 	}
+// `;
+
+// main sentence
+const typing = keyframes`
+	0% {
+		width: 0%;
 	}
-	img:hover {
-		transition: linear 0.6s;
-		transform: scale(1.5);
-		opacity: 1;
+	50% {
+		width: 350px;
+	}
+	100% {
+		width: 0%;
 	}
 `;
 
 const Writing = styled.h1`
 	color: transparent;
 	white-space: nowrap;
-	&:hover {
-		content: 'Hello real live world!';
+	display: flex;
+	justify-content: center;
+	&:after {
+		content: 'Hello Real LIVE World!';
 		position: absolute;
 		top: 24rem;
 		color: #fff;
 		overflow: hidden;
 		border-right: 2px solid #fff;
-		animation: typing 7s steps(31) infinite;
+		animation: ${typing} 7s steps(25) infinite;
 	}
 `;
 
+// link
+const Button = styled.button`
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 300px;
+	height: 60px;
+	font-size: 17px;
+	/* color: white; */
+	opacity: 0.7;
+	border-radius: 20px / 20px;
+	cursor: pointer;
+	&:hover {
+		opacity: 1.5;
+	}
+`;
+// const linkStyle = {
+// 	position: 'absolute',
+// 	top: 0,
+// 	// display: 'flex',
+// 	// justifyContent: 'center',
+// 	textDecoration: 'none',
+// 	color: 'white',
+// };
 const Main = () => {
 	return (
 		<Container>
 			<Overlay />
 			<Video src={videoBg} autoPlay loop muted />
-			<Countries>
+			{/* <Countries>
 				<Link to="/japan">
 					<img src={japan} alt="japan" />
 				</Link>
@@ -78,8 +119,11 @@ const Main = () => {
 				<Link to="/finland">
 					<img src={finland} alt="finland" />
 				</Link>
-			</Countries>
-			<Writing>ee</Writing>
+			</Countries> */}
+			<Writing />
+			<Link to="/countries">
+				<Button>Let's dive into a LIVE world 🌍</Button>
+			</Link>
 		</Container>
 	);
 };

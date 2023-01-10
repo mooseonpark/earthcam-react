@@ -27,8 +27,8 @@ import {
 // };
 const Japan = () => {
 	const { isLoaded } = useLoadScript({
-		googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
-		// googleMapsApiKey: 'AIzaSyBITe_nLJByutJisIZPV1bnGxJfxIa8A-g',
+		// googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+		googleMapsApiKey: 'AIzaSyBITe_nLJByutJisIZPV1bnGxJfxIa8A-g',
 	});
 
 	if (!isLoaded) return <div>Loading...!!!!</div>;
